@@ -1,0 +1,310 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs}
+\usepackage[a4paper,margin=23mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Unbounded gaps between the two largest distinct Smith factors of a one-defect connectivity matrix},pdfauthor={Iaroslav Argunov}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newenvironment{proof}{\par\noindent\textit{Proof.}\ }{\hfill\(\square\)\par}
+\newcommand{\F}{\mathbb F_2}
+\newcommand{\val}{v_2}
+\newcommand{\ord}{\operatorname{ord}_{\pi}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Tr}{\mathsf{T}}
+\begin{document}
+\begin{center}
+{\Large\bfseries Unbounded gaps between the two largest distinct Smith factors of a one-defect connectivity matrix\par}
+\medskip Iaroslav Argunov\\[2pt] 19 November 2026
+\end{center}
+\begin{abstract}
+Sum connected gluings of marked noncrossing matchings over a subgroup
+of rotations on \(2k+1\) sites. For \(k\ge3\) the quotient of the two
+largest distinct integer Smith factors is the largest power of two
+dividing the even member of \(\{k,k+1\}\). We determine both multiplicities
+for every subgroup. The gap follows from complementing the incidence
+generators of the dual lattice. The surviving form at its far end is a
+binary incidence pairing involving only points, pairs, triples and four-sets.
+\end{abstract}
+
+\section{The gap theorem}
+Label \(N=2k+1\) points on an oriented circle. A state is a marked site and
+a noncrossing perfect matching of the others. Let \(A(p,q)\) be the
+indicator that their union is connected, retaining both copies of any
+common edge. For a rotation subgroup \(H\) of order \(h\), choose one
+state per orbit and form \(G_H(p,q)=\sum_{g\in H}A(p,gq)\).
+Set \(m=N/h,\ e=\val((k+1)!)\). Write \(t\) for the number of
+\(H\)-orbits of three-sets. Burnside's lemma gives
+\[
+ t=\bigl(\tbinom N3+{\bf1}_{3\mid h}\,2N/3\bigr)/h.
+\]
+Only the two elements of order three can fix a triple besides the identity.
+
+\begin{theorem}\label{thm}
+For \(k\ge3\) put \(a=\val(k(k+1))\). The two largest distinct Smith
+factors of \(G_H\) are \(2^e\) and \(2^{e-a}\). Their multiplicities are
+\[
+\begin{array}{c|cc}
+ &2^e&2^{e-a}\\ \hline
+k\ {\rm odd}&1&m(k+1)-2\\
+k\ {\rm even}&m+1&t+m(k-2)-2.
+\end{array}
+\]
+For \(k=0\) the only factor is one. At \(k=1,2\) the largest
+factor is two, with respective multiplicities \(1,m+1\), and the
+remaining \(m-1\) factors are one in either case.
+\end{theorem}
+For full rotations, \(k=31\) gives a single \(2^{31}\) followed by
+30 copies of \(2^{26}\). At \(k=32\) there are two copies of \(2^{31}\)
+followed by 700 copies of \(2^{26}\). In either case all four intermediate
+powers are absent. Orders \(k=2^b-1\) or \(2^b\) give gaps of unbounded
+length in the sequence of exponents.
+
+\section{From marked diagrams to an integral form}
+Take \(R=\mathbb Z[i]_{(1+i)}\), let \(\pi=1+i\), and normalize
+\(\ord(2)=2\). In the permutational coordinate space on the \(k\)-subsets,
+identify the vector of a subset with its square-free monomial; write
+\(r_S\) for its containment test. On a marked diagram \(p\), orient
+each arc \(a\to b\) along the boundary interval avoiding the mark and put
+\[
+ T(p)=\prod_{a\to b}(x_b-i x_a).
+\]
+There are \(N\binom{2k}k/(k+1)=\binom Nk\) diagrams, so \(T\) is square.
+In Definition 3.1, Eq.~(12), of Morin-Duchesne and Saint-Aubin, set
+\(v=1\) and \(u=e^{\pi i/4}\). Each arc contributes
+\(u x_b+u^{-1}x_a=u(x_b-i x_a)\), so the published map equals \(u^kT\).
+In the one-defect sector the open path joins the two ends. An essential
+closed component would separate the ends and intersect that path.
+Thus all closed components are
+contractible. At twist \(v=1\) and loop weight \(\beta=0\),
+Theorem 3.3 and Proposition 4.3, Eq.~(29), of
+\href{https://arxiv.org/abs/1203.4996}{Morin-Duchesne and Saint-Aubin}
+give
+\[
+ A=i^k T^{\mathrm T}T,\qquad |\det A|=2^E,\qquad
+ E=\sum_{j=0}^{k-1}\binom Nj .
+\]
+In the determinant each factor is
+\(2^2-4\cos^2((r+1/2)\pi/2)=2\); the transpose is bilinear.
+The mark makes the action of \(H\) on diagrams free. The orbit sums
+are an integral basis of a primitive invariant sublattice
+of the free diagram module. The operator \(A\) acts there by \(G_H\);
+extending its basis makes \(A\) block triangular. Hence \(\det G_H\)
+divides \(\det A\) over the integers, and has no odd prime divisor.
+
+We verify the integral image needed below. Define
+\(L=\{x:\langle x,r_S\rangle\in\pi^{k-|S|}R,\ |S|\le k\}\)
+inside the subset lattice. In \(T(p)\) the test \(r_S\) either vanishes
+or selects one endpoint from each of \(|S|\) arcs; it obtains a factor
+\((1-i)^{k-|S|}\) from the free choices. Thus \(\im T\subset L\).
+The containment rows on the good sets \(s_1<\cdots<s_j\) with
+\(s_i\ge2i\) form the integral subset basis of
+\href{https://doi.org/10.1006/eujc.1993.1001}{Bier}.
+For clarity, split the columns on membership of the last site.
+Rows containing it reduce to the good-row basis on \((k-1)\)-sets.
+Rows omitting it restrict to the basis on \(k\)-sets of the smaller
+ground set if \(N>2k\). At \(N=2k\) complement those \(k\)-sets;
+the rows become avoidance tests on \((k-1)\)-sets, related to containment
+by triangular inclusion-exclusion since subsets of a good set are good.
+This proves the basis assertion inductively from \(k=0\).
+There are \(\binom Nj-\binom N{j-1}\) good sets of size \(j\) by ballot
+reflection. The rows of size at most \(j\) have rational rank at most
+\(\binom Nj\), by summing all \(j\)-extensions of any one row. The
+good rows up to that degree already span a saturated space of that rank.
+Every test of degree \(j\) is therefore an integral combination of good
+rows of degrees at most \(j\). In particular, imposing the divisibility
+conditions on the good rows imposes them on all the containment tests.
+Consequently in dual basis coordinates the colength of \(L\) equals
+\(\sum_{j=0}^k(k-j)(\binom Nj-\binom N{j-1})=E\).
+This also equals \(\ord(\det T)\) by the Gram identity, so \(L=\im T\).
+
+Since \(T\) is injective and commutes with rotations, the image of the
+invariant state lattice is \(L^H\). Its orbit-sum pairing has matrix
+\(hG_H\); the factor \(h\) is a unit. Before taking invariants the
+dual of \(L\) is spanned by the scaled tests
+\(\pi^{s-k}r_S,\ s=|S|\le k\), by the defining congruences and
+biduality (the size-\(k\) tests include the coordinate basis).
+The projection \(P=h^{-1}\sum_{g\in H}g\) splits the lattice
+orthogonally, so the dual of \(L^H\) is spanned by their projections.
+A generating family computes the Gram
+invariants on a basis, with extra zero factors, by splitting its free
+presentation over the discrete valuation ring.
+
+\section{Complement generators and the first residual layer}
+
+Replace \(r_S\) by the indicator \(b_S\) of \emph{avoiding} \(S\).
+Inclusion-exclusion acts triangularly on the scaled generators, with
+unit diagonal and coefficients \(\pm\pi^{s-|U|}\) at \(U\subset S\).
+Hence the generated lattice is unchanged. Scale its form by \(2^e\).
+Up to a common unit the resulting entries are
+\[
+ K_{ST}=\pi^{s+t'}\,h^{-1}\sum_{g\in H} B_{|S\cup gT|},\qquad
+ B_j=\frac{(k+1)_j}{(2k+1)_j},\quad t'=|T|.
+\]
+Here \((x)_j\) denotes the falling factorial and \(B_0=1\). The common
+factor is a unit since \(\val\binom{2k+1}{k}=k-e\).
+The nonzero exponents of the scaled presentation, counting exponent
+zero as well, are \(2(e-v)\) when the original Smith factor is \(2^v\).
+This follows by dualizing a basis, since the form on the dual has the
+inverse Gram matrix up to a unit. The remaining argument determines
+the first two distinct valuations in \(K\).
+
+\begin{lemma}\label{lem}
+For odd \(\ell\ge1\) put \(d=\val(\ell+1)\) and
+\(D_j=(\ell+1)_j/(2\ell+1)_j\), \(1\le j\le2\ell+1\).
+Then \(\ord(\pi^jD_j)\ge2d\). Equality occurs exactly at \(j=2,4\)
+within \(j\le\ell+1\).
+\end{lemma}
+\begin{proof}
+For \(D_j\ne0\) write \(b=\lfloor j/2\rfloor\). The even factors of
+the denominator contribute \(2^b(\ell)_b\). Cancelling gives
+\[
+ j+2\val D_j=2d+j-2b+2\val((\ell-b)_{j-1-b}).
+\]
+For equality \(j=2b\), and \(b-1\) successive factors must be odd.
+This requires \(b=1,2\), and both possibilities do give equality.
+Past \(\ell+1\) the numerator vanishes.
+\end{proof}
+
+In characteristic two, invariant functions on labelled subsets have
+orthonormal orbit-indicator coordinates. Orbit sizes and stabilizers
+are odd. Thus a parity sum over relative group elements is the
+restriction of the labelled incidence operator in those coordinates.
+
+\paragraph{Odd \(k\ge3\).}
+Split off the empty generator, a unit pivot. Its Schur complement has
+entries obtained by replacing \(B_u\) by \(B_u-B_sB_{t'}\) in \(K\),
+for \(s,t'\ge1\). By Lemma~\ref{lem} with \(\ell=k\) the product term
+has valuation at least \(4a\) after scaling. The first term has valuation
+at least \(2a\), since \(s+t'\ge u\). At valuation \(2a\) the sets must
+be disjoint and \(s+t'=2\) or 4. Averaging preserves this lower bound.
+Thus at the first possible residual depth only singleton--singleton,
+singleton--triple, and pair--pair blocks remain, each counting disjointness.
+
+\paragraph{Even \(k\ge4\).}
+Here \(a=\val(k)\) and \(B_2=(k+1)/(2(2k+1))\) has valuation \(-2\)
+in \(R\). For \(u\ge2\), conditioning on two avoided sites gives
+\[
+ B_u=B_2\frac{(k-1)_{u-2}}{(2k-1)_{u-2}}
+     = B_2\sum_{j=0}^{u-2}(-1)^j\binom{u-2}{j}
+                    \frac{(k)_j}{(2k-1)_j}.
+\]
+The second identity is inclusion-exclusion for sampling without
+replacement. Lemma~\ref{lem} with \(\ell=k-1\) shows that
+\(\pi^{s+t'}(B_u-B_2)\) has valuation at least \(2a\) whenever
+\(s+t'\ge u\ge2\): the \(j\)th nonconstant summand has valuation at
+least \(2a+s+t'-j-2\), including the factor \(B_2\).
+Equality is possible only at
+\(s+t'=u=j+2=4,6\). At these indices the last summand has coefficient
+one and all preceding summands have strictly larger valuation, so
+both equalities hold. The possible sums \(4,6\) remain available at
+\(k=4\), even when \(B_6=0\).
+
+Retain the empty set, the sum-zero singleton coordinates, and one
+reference pair \(E\). The singleton orbit sum equals
+\(\pi(k+1)/h\) times the empty generator, and \(m\) is a unit in \(R\).
+Modulo \(\pi\) the singleton form is \(I+J\) (coincident sites give
+zero, disjoint sites one after scaling). On the sum-zero subspace this
+is a nonsingular pairing. Its links to the empty set and reference pair
+vanish modulo \(\pi\): the empty link is constant, and \(s+t'=3\) has
+valuation at least one. The empty--pair link is the unit \(\pi^2B_2\);
+the pair diagonal is zero modulo \(\pi\), since \(s+t'=4\) contributes
+valuation at least two even to the constant term. This gives a unit
+block of rank \(m+1\).
+
+For every other size \(s\ge2\) replace its projected generator \(u_S\)
+by \(u_S-\pi^{s-2}u_E\). Any pairing involving one of these differences
+has its constant \(B_2\) term cancelled exactly. The terms against \(E\)
+in the expanded difference have their natural degree sum increased
+by \(s-2\) or \(t'-2\), which are nonnegative. Hence every remaining link
+to a pivot and every residual pairing is divisible by \(\pi^{2a}\).
+More explicitly, a mixed entry against a projected pivot of size \(t'\)
+is the difference of the two group averages of
+\(\pi^{s+t'}(B_{|S\cup gT|}-B_2)\) and
+\(\pi^{s+t'}(B_{|E\cup gT|}-B_2)\). In each average the union has size
+at least two and at most the unscaled sum of sizes. The same argument
+applies separately to the four terms of a difference--difference entry.
+The Schur correction between residual generators is divisible by
+\(\pi^{4a}\). After division by \(\pi^{2a}\) and reduction modulo \(\pi\),
+the pair coordinates are the sum-zero space on pair orbits.
+For generators of size greater than two the reference correction
+has positive excess degree and disappears. The only surviving
+blocks are disjointness on pair--pair, pair--four-set, and
+triple--triple. The first two are restricted on the pair side to
+sum-zero coordinates.
+
+\section{Ranks at the far end of the gap}
+Here are details of the binary rank calculation for both parities.
+Write \(D\) for point--pair incidence, \(p=mk\) for the number of pair
+orbits, and \(J\) for an all-ones map of the appropriate size.
+Since \(N\) is odd, \(DD^{\mathrm T}=I+J\) on points; the image of \(D\)
+is their sum-zero subspace of dimension \(m-1\). Thus \(D^{\mathrm T}D\)
+is a projector of rank \(m-1\). These identities hold on the invariant
+spaces by the orbit-coordinate observation above. Pair disjointness is
+\(I+J+D^{\mathrm T}D\), by expanding the indicator of zero intersection.
+
+For odd \(k\), the all-ones map on pairs is a rank-one projector because
+\(p\) is odd; it annihilates \(D^{\mathrm T}D\) in both orders. The
+pair block consequently has rank \(p-m\). Against triples a singleton
+vector \(w\) gives \(\sum_O w_O+\sum_{x\in T}w_{Hx}\). Comparing triples
+differing by a point shows that its kernel consists of the constants,
+which indeed give zero since \(m\) and three are odd. The singleton
+block \(I+J\) annihilates constants, and the triple diagonal block is
+zero. This part has rank \(2(m-1)\): split off the perfect pairing
+between complementary row and column spaces of the off-diagonal map.
+The total rank is \(m(k+1)-2\).
+
+For even \(k\), set \(Q=I+D^{\mathrm T}D\) and let \(W\) be the
+sum-zero space on pairs. Pair disjointness restricts to \(Q\) on \(W\).
+The map from \(w\in W\) to four-sets \(T\) sums the weights of edges
+disjoint from \(T\). Inclusion-exclusion gives
+\(\sum_{x\in T}(Dw)_x+\sum_{\{x,y\}\subset T} w_{xy}
+=\sum_{\{x,y\}\subset T}(Qw)_{xy}\), since each vertex occurs three
+times in the last edge sum. The only edge functions whose sum vanishes
+on all four-sets are constants. Indeed comparing two tests differing
+in points \(x,y\) gives zero sum of the values \(f_{xi}+f_{yi}\) over
+every triple outside \(x,y\). Such a function is constant by exchanging
+one index, and is zero by taking a triple. Thus all edges at each
+vertex have equal weights. Conversely six equal edge weights sum to zero.
+It follows that the kernel on \(W\) is
+\(\im D^{\mathrm T}\oplus\langle{\bf1}\rangle\) of dimension \(m\).
+Here \(Q{\bf1}={\bf1}\), \(\ker Q=\im D^{\mathrm T}\), and the
+edge constant is sum-zero since \(p\) is even. The pairing \(Q\)
+vanishes when both arguments lie in this kernel: the image under \(Q\)
+is constant, and all elements of \(W\) have sum zero.
+Splitting the off-diagonal pairing therefore gives
+rank \(2(p-m-1)\).
+
+Finally write \(E,C\) for pair--triple and point--triple incidence.
+Disjointness of triples is \(I+E^{\mathrm T}E+
+C^{\mathrm T}(I+J)C\): expand the parity sum of the binomial coefficients
+of their intersection size. Counting containments gives
+\[
+ EE^{\mathrm T}=Q,\quad DE=0,\quad CC^{\mathrm T}=I+J,\quad EC^{\mathrm T}=J .
+\]
+The third equality uses \(\binom{N-1}2=k(2k-1)\) even. Thus
+\(\im E=\ker D\); \(E^{\mathrm T}E\) is a projector of rank \(p-m+1\).
+The last projector \(C^{\mathrm T}(I+J)C\) has rank \(m-1\) and
+annihilates \(E^{\mathrm T}E\) in both orders. The triple block
+has rank \(t-p\), giving \(t+m(k-2)-2\) in all. Both residual ranks
+in Theorem~\ref{thm} are positive for \(k\ge3\): in the even case
+\(t\ge\binom N3/h\) and \(N\ge9\). The small cases follow by direct
+gluing or from the dimension and unit block. This proves the theorem.
+
+\paragraph{Computational checks.}
+The accompanying program constructs the geometric matrices for every
+rotation subgroup at \(1\le k\le5\), with an additional comparison
+against fourteen stored geometric profiles. It checks the phase in
+the spin identity on 1,962 gluings. For \(N=63,65\) it computes the
+ranks of the residual orbit-incidence forms directly. The proof above
+applies at arbitrary order without these computations.
+\begin{thebibliography}{9}
+\bibitem{bier} T. Bier, Remarks on recent formulas of Wilson and Frankl,
+\emph{European J. Combin.} \textbf{14} (1993), 1--8.
+\href{https://doi.org/10.1006/eujc.1993.1001}{doi:10.1006/eujc.1993.1001}.
+\bibitem{mdsa} A. Morin-Duchesne and Y. Saint-Aubin,
+A homomorphism between link and XXZ modules over the periodic Temperley--Lieb algebra,
+\emph{J. Phys. A} \textbf{46} (2013), 285207.
+\href{https://doi.org/10.1088/1751-8113/46/28/285207}{doi:10.1088/1751-8113/46/28/285207}.
+\end{thebibliography}
+\end{document}

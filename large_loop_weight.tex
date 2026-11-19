@@ -1,0 +1,248 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs}
+\usepackage[left=21mm,right=21mm,top=18mm,bottom=18mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Loop counts in closed meandric systems at large weight},pdfauthor={Iaroslav Argunov}}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Poi}{\operatorname{Pois}}
+\newcommand{\TV}{d_{\mathrm{TV}}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\raggedbottom
+\linespread{0.96}
+\setlength{\emergencystretch}{1em}
+\renewcommand{\labelitemi}{\(\bullet\)}
+\begin{document}
+\begin{center}
+{\LARGE Loop counts in closed meandric systems at large weight}\\[7pt]
+{\large Finite boundary windows and a Poisson crossover}\\[8pt]
+Iaroslav Argunov\\[3pt]
+{\small 19 November 2026}
+\end{center}
+\begin{abstract}
+Give each loop of a closed meandric system a factor \(q\). A finite-window
+frontier estimate proves that the partition function has an
+\(n^{-3/2}\) prefactor for every fixed real \(q\ge18\). The bound also
+places the mean and fluctuations of the loop count in the range of a
+conditional local central limit theorem. If \(q\) tends to infinity,
+the defect from the maximal loop count is asymptotically Poisson in
+total variation with an explicitly defined mean. Replacing that mean
+by its leading term \(2n/q\) gives a sharp crossover at \(q\asymp
+n^{1/3}\). The predicted transition of the partition function at
+\(q=2\) remains outside the range certified here.
+\end{abstract}
+
+\section*{1. The composition and its saddle}
+Choose an ordered pair of noncrossing perfect matchings above and below
+\(2n\) linearly labelled points, counting a common arch as a loop on
+two vertices. If the pair has \(k\) loops, its defect is \(D_n=n-k\).
+Write \(M_n(y)=\sum y^{n-k}\) over all such pairs and \(m_n(q)=q^n
+M_n(1/q)\). Under probability proportional to \(q^k\), \(D_n\) has
+probability generating function \(M_n(s/q)/M_n(1/q)\).
+
+Join the two matchings in the lattice of noncrossing partitions of
+the \(2n\) points. A pair is irreducible if the join consists of one
+block. Denote its generating function (including a constant term) by
+\(F(z,y)=1+z+\sum_{a\ge2,s} f_{a,s}z^ay^s\), where \(s\) is defect.
+The join construction and the irreducible support bound appear in
+\href{https://arxiv.org/abs/1506.01345}{Nica, \S\S3--4} and
+\href{https://doi.org/10.4171/AIHPD/80}{Fukuda and Nechita, Prop.~4.3
+and Cor.~5.2}. Each nontrivial irreducible has \(a/2\le s<a\).
+The block containing the first point leaves \(2a\) independent gaps
+(including the interval after its last point). The restrictions to
+these gaps can be chosen independently. The loops are disjoint across
+the join blocks, so the defects add. Consequently, for
+\(U(t,y)=1+\sum_{n\ge1}M_n(y)t^n\),
+\[
+ U=F(tU^2,y),\qquad
+ M_n(y)=\frac1{2n+1}[z^n]F(z,y)^{2n+1}.
+ \tag{1}
+\]
+The second equality is Lagrange inversion.
+
+\begin{theorem}
+For every \(0<y\le1/18\) there is a unique \(z=z(y)>0\) in the
+interior of convergence of \(F\) such that \(zF_z/F=1/2\).
+Give \((A,B)=(a,s)\) probability
+\([z^ay^s]F\cdot z(y)^ay^s/F(z(y),y)\), using the coefficient of
+the formal series in this expression. Put \(V=\Var A\). For each
+fixed real \(q\ge18\), with \(y=1/q\) and \(z=z(y)\),
+\[
+ m_n(q)\sim \frac{F(z,y)}{4\sqrt{\pi V}}\,
+ \frac{\{qF(z,y)^2/z\}^n}{n^{3/2}} .
+ \tag{2}
+\]
+\end{theorem}
+The exponent \(3/2\) in the large-weight phase of closed systems
+was proposed by \href{https://arxiv.org/abs/cond-mat/0003008}{Di
+Francesco, Guitter and Jacobsen, (2.38)}. We use finite windows of the boundary to establish the sufficient interval in Theorem 1.
+
+\input{windows}
+
+\section*{3. The conditional law}
+Take \(m=2n+1\) independent copies of \((A,B)\) at the saddle.
+Let \(S_A,S_B\) be their two sums. Formula (1) yields exactly
+\[
+ \Prb(D_n=r)=\Prb(S_B=r\mid S_A=n),\qquad
+ M_n(y)=F(z,y)^m z^{-n}\Prb(S_A=n)/m.
+ \tag{5}
+\]
+Write \(\beta=\EE B,\ c=\Cov(A,B),\ W_*=\Var B-c^2/V\), and set
+\(\eta=m\beta-c/(2V)\). At fixed positive \(y\), the atoms
+\((0,0),(1,0),(2,1)\) give \(W_*>0\) and lattice span one.
+Implicit differentiation of the saddle equation gives
+\[
+ \frac{d\beta}{d\log y}=W_*,\qquad
+ 2\beta=2y+4y^2-16y^3+O(y^4),\qquad W_*=y+O(y^2).
+ \tag{6}
+\]
+Indeed \(d\log z/d\log y=-c/V\). Through degree three the marked
+terms of \(F\) are \(2z^2y+(8z^3+4z^4)y^2+
+(42z^4+60z^5+18z^6)y^3\). Substitution into \(2zF_z=F\)
+gives \(z=1-6y+4y^2+96y^3+O(y^4)\); then evaluate \(2yF_y/F\).
+\begin{theorem}
+Let \(q=q_n\ge18\) and \(ny=n/q\to\infty\). Uniformly over
+integers \(r\),
+\[
+ \sqrt{2\pi mW_*}\Prb(D_n=r)
+ =\exp[-(r-\eta)^2/(2mW_*)]+o(1).
+ \tag{7}
+\]
+In particular \((D_n-\eta)/\sqrt{mW_*}\) tends to a standard normal.
+For fixed \(q\ge18\) the proportion of loops tends in probability
+to \(1-2\beta\).
+\end{theorem}
+General conditional Gaussian theorems for triangular arrays are given
+by \href{https://doi.org/10.1239/jap/996986753}{Janson}.
+We include the local argument because \(y\) can decrease to zero.
+Over \(0<y\le1/18\) the saddle varies in a compact positive range,
+with a uniform analytic neighbourhood at each limit point after
+including \(y=0\). The first two atoms above thus have probabilities
+bounded below, the third probability at least a constant times \(y\).
+The third centered absolute moments of \(A,B\) are \(O(1)\) and
+\(O(y)\). For their characteristic function \(\varphi\),
+\[
+ |\varphi(u,v)|^m\le
+ \exp\{-cm(\|u\|^2+y\|2u+v\|^2)\},
+\]
+where here \(c>0\) is a constant and the norms are distances to
+\(2\pi\mathbb Z\). This follows by retaining the two independent
+differences from \((0,0)\) in \(1-|\varphi|^2\).
+The torus change \((u,v)\mapsto(u,2u+v)\) has determinant one.
+Outside the rectangle with scaled coordinates bounded by \(L\),
+the integral is \(O(e^{-c'L^2}/(m\sqrt y))\), with respective
+scales \(1/\sqrt m\) and \(1/\sqrt{my}\).
+Inside, the error in the centered Gaussian log expansion is
+\(O(m|u|^3+my|v|^3)=o(1)\) at fixed \(L\). The covariance form
+is bounded above and below by constant multiples of \(u^2+yv^2\).
+These estimates give absolute error \(o(1/(m\sqrt y))\) in the
+bivariate normal lattice approximation, uniformly in the target
+because its Fourier phase has modulus one. The one-dimensional
+argument for \(S_A=n\) gives \((2\pi mV)^{-1/2}(1+o(1))\);
+the discrepancy \(n-m/2=-1/2\) is bounded. This last estimate
+is uniform even without the requirement \(my\to\infty\), since
+the two atoms of \(A\) at 0 and 1 remain bounded below.
+Equation (5) now gives (2), uniformly in this latter relative
+estimate for the corresponding parameters. Dividing the normal
+densities gives exactly the conditional mean \(\eta\) and variance
+\(mW_*\) in (7). Summing on fixed standardized intervals and
+then increasing their lengths proves the weak limit.
+
+\section*{4. Which Poisson mean?}
+Here \(\TV\) is half the sum of absolute differences of point
+probabilities, and \(\Phi\) denotes the standard normal distribution
+function.
+\begin{theorem}
+Along every sequence \(q=q_n\to\infty\),
+\[
+ \TV\big(\mathcal L(D_n),\Poi(m\beta)\big)\longrightarrow0.
+\]
+If \(n/q\to\lambda<\infty\), the limit law is \(\Poi(2\lambda)\),
+including a point mass at zero when \(\lambda=0\). With the
+simpler mean \(2n/q\), the limiting distance is
+\[
+ \lim\TV\big(\mathcal L(D_n),\Poi(2n/q)\big)=
+ \begin{cases}
+ 0, & q/n^{1/3}\to\infty,\\
+ 2\Phi(\sqrt2/a^{3/2})-1,& q/n^{1/3}\to a\in(0,\infty),\\
+ 1,& q/n^{1/3}\to0.
+ \end{cases}
+ \tag{8}
+\]
+\end{theorem}
+For bounded \(ny\to\lambda\), (5) and the uniform one-dimensional
+estimate give \(M_n(y)/C_n\to e^{2\lambda}\), with \(C_n\) the
+\(n\)-th Catalan number. Indeed \(V\to1/4,\ F\to2\),
+\(F^2/(4z)=1+2y+O(y^2)\). For fixed \(r\), (1) gives
+\([y^r]M_n(y)/C_n\sim(2n)^r/r!\). One way to see this is to expand
+\(F(z,y)^m\): the term using \(r\) distinct copies of \(2z^2y\)
+is \(2^r\binom mr\binom{m-r}{n-2r}/m\) before normalization.
+Every other term selects at most \(r-1\) nonconstant-in-\(y\)
+factors of bounded degree. Dividing by \(C_n=\binom{m}{n}/m\)
+gives the stated equivalent. Pointwise convergence of masses to a
+probability on the integers implies convergence in total variation.
+
+When \(ny\to\infty\), (7) and the Poisson local limit theorem
+(equivalently Stirling's formula on fixed central windows) compare
+the two lattice laws on intervals of length \(O(\sqrt{ny})\).
+Their masses outside increasing such windows vanish.
+For mean \(m\beta\) the normal variances have ratio tending to one,
+and the two centers differ by \(O(1)\). This proves the first claim
+also in this range and hence by subsequences for all \(q\to\infty\).
+For mean \(2ny\), (6) instead displaces the centers by
+\[
+ \frac{\eta-2ny}{\sqrt{2ny}}
+ = 2\sqrt{2}\sqrt{ny^3}(1+O(y))+o(1).
+\]
+When this has a finite limit \(d\), summing the absolute differences
+by Riemann sums gives the distance between two unit normals separated
+by \(d\), equal to \(2\Phi(d/2)-1\). When the displacement diverges,
+the central windows eventually separate and the distance tends to one.
+This proves (8). The cube-root scale concerns the use of a particular
+truncated mean; the large-\(q\) exponent in (2) addresses a different
+limit.
+
+The first correction to the Poisson mean gives a second explicit
+scale. For \(q\to\infty\) and mean \(2n/q+4n/q^2\), the
+distance tends to zero for \(q/n^{1/5}\to\infty\), and to one for
+\(q/n^{1/5}\to0\). At \(q/n^{1/5}\to a\in(0,\infty)\)
+its limit is \(2\Phi(4\sqrt2/a^{5/2})-1\). In fact (6) makes the
+new standardized displacement \(-8\sqrt2\sqrt{ny^5}(1+O(y))+o(1)\)
+when \(ny\to\infty\), so the same comparison proves all three limits.
+If \(ny\) is bounded the two means differ by \(o(1)\).
+
+\paragraph{Reproducibility.}
+The companion certificate uses the Python standard library and exact arithmetic. It tests the transition
+majorant against explicit port pairings and path lengths and
+recomputes all finite series entries from pair histories.
+The location of a sharp transition in the fixed-weight model and
+the exponent for connected meanders remain open.
+
+\section*{References}\small
+\noindent
+P. Di Francesco, O. Golinelli and E. Guitter,
+\href{https://arxiv.org/abs/hep-th/9607039}{Meanders: A direct
+enumeration approach}, Nuclear Physics B 482 (1996), 497--535.
+Their large-weight expansions provide the enumerative background. The discussion after (5.6) in their preprint distinguishes the limit at infinite weight from the exponent at fixed finite weight.\\[4pt]
+P. Di Francesco, E. Guitter and J. L. Jacobsen,
+\href{https://arxiv.org/abs/cond-mat/0003008}{Exact meander
+asymptotics: a numerical check}, Nuclear Physics B 580 (2000), 757--795.\\[4pt]
+M. Fukuda and I. Nechita,
+\href{https://arxiv.org/abs/1609.02756}{Enumerating meandric systems
+with large number of loops}, Ann. Inst. Henri Poincar\'e D 6
+(2019), 607--640.\\[4pt]
+S. Janson, \href{https://doi.org/10.1239/jap/996986753}{Moment
+convergence in conditional limit theorems}, Journal of Applied Probability
+38 (2001), 421--437.\\[4pt]
+I. Jensen, \href{https://arxiv.org/abs/cond-mat/0008178}{A transfer
+matrix approach to the enumeration of plane meanders}, Journal of
+Physics A 33 (2000), 5953--5963.\\[4pt]
+A. Nica, \href{https://arxiv.org/abs/1506.01345}{Free probability
+aspect of irreducible meander systems, and some related observations
+about meanders}, Infinite Dimensional Analysis, Quantum Probability
+and Related Topics 19 (2016), \href{https://doi.org/10.1142/S0219025716500119}{DOI 10.1142/S0219025716500119}.
+\end{document}

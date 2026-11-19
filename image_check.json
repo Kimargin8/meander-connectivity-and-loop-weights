@@ -1,0 +1,37 @@
+[
+  {
+    "k": 0,
+    "sites": 1,
+    "binary_rank": 1
+  },
+  {
+    "k": 1,
+    "sites": 3,
+    "binary_rank": 3
+  },
+  {
+    "k": 2,
+    "sites": 5,
+    "binary_rank": 10
+  },
+  {
+    "k": 3,
+    "sites": 7,
+    "binary_rank": 35
+  },
+  {
+    "k": 4,
+    "sites": 9,
+    "binary_rank": 126
+  },
+  {
+    "k": 5,
+    "sites": 11,
+    "binary_rank": 462
+  },
+  {
+    "k": 6,
+    "sites": 13,
+    "binary_rank": 1716
+  }
+]

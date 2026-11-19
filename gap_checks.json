@@ -1,0 +1,260 @@
+{
+  "exact_scalar_cases": 65913,
+  "previous_geometry": {
+    "cases": 14,
+    "input_sha256": {
+      "cyclic_smith.json": "4c7aaab40753d4cf4facaab9d4032dc4f22d3e33e91ddc6668090eaf43d45562",
+      "subgroup_geometry.json": "0d9fa9d5452cf4155b6e87a605bda0c707d7738bb6c3af0dea68bb29feb3a07a"
+    }
+  },
+  "spin_graph_comparisons": 1962,
+  "independent_geometry": [
+    {
+      "k": 1,
+      "h": 1,
+      "geometric_histogram": [
+        2,
+        1
+      ]
+    },
+    {
+      "k": 1,
+      "h": 3,
+      "geometric_histogram": [
+        0,
+        1
+      ]
+    },
+    {
+      "k": 2,
+      "h": 1,
+      "geometric_histogram": [
+        4,
+        6
+      ]
+    },
+    {
+      "k": 2,
+      "h": 5,
+      "geometric_histogram": [
+        0,
+        2
+      ]
+    },
+    {
+      "k": 3,
+      "h": 1,
+      "geometric_histogram": [
+        8,
+        26,
+        0,
+        1
+      ]
+    },
+    {
+      "k": 3,
+      "h": 7,
+      "geometric_histogram": [
+        2,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "k": 4,
+      "h": 1,
+      "geometric_histogram": [
+        16,
+        100,
+        0,
+        10
+      ]
+    },
+    {
+      "k": 4,
+      "h": 3,
+      "geometric_histogram": [
+        4,
+        34,
+        0,
+        4
+      ]
+    },
+    {
+      "k": 4,
+      "h": 9,
+      "geometric_histogram": [
+        2,
+        10,
+        0,
+        2
+      ]
+    },
+    {
+      "k": 5,
+      "h": 1,
+      "geometric_histogram": [
+        32,
+        364,
+        1,
+        64,
+        1
+      ]
+    },
+    {
+      "k": 5,
+      "h": 11,
+      "geometric_histogram": [
+        2,
+        34,
+        1,
+        4,
+        1
+      ]
+    }
+  ],
+  "exact_rotation_orders": [
+    {
+      "k": 3,
+      "rotation_order": 1,
+      "top_count": 1,
+      "next_count": 2,
+      "measured_positive_histogram": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "k": 3,
+      "rotation_order": 7,
+      "top_count": 0,
+      "next_count": 24,
+      "measured_positive_histogram": [
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "k": 4,
+      "rotation_order": 1,
+      "top_count": 2,
+      "next_count": 10,
+      "measured_positive_histogram": [
+        10,
+        0,
+        2
+      ]
+    },
+    {
+      "k": 4,
+      "rotation_order": 3,
+      "top_count": 2,
+      "next_count": 24,
+      "measured_positive_histogram": [
+        24,
+        0,
+        2
+      ]
+    },
+    {
+      "k": 4,
+      "rotation_order": 9,
+      "top_count": 6,
+      "next_count": 66,
+      "measured_positive_histogram": [
+        66,
+        0,
+        6
+      ]
+    }
+  ],
+  "leading_forms": [
+    {
+      "k": 4,
+      "N": 9,
+      "h": 3,
+      "top_exponent": 3,
+      "top_count": 4,
+      "gap": 2,
+      "next_exponent": 1,
+      "next_count": 34,
+      "generators": 84,
+      "measured_binary_rank": 34
+    },
+    {
+      "k": 7,
+      "N": 15,
+      "h": 3,
+      "top_exponent": 7,
+      "top_count": 1,
+      "gap": 3,
+      "next_exponent": 4,
+      "next_count": 38,
+      "generators": 195,
+      "measured_binary_rank": 38
+    },
+    {
+      "k": 8,
+      "N": 17,
+      "h": 1,
+      "top_exponent": 7,
+      "top_count": 18,
+      "gap": 3,
+      "next_exponent": 4,
+      "next_count": 780,
+      "generators": 3196,
+      "measured_binary_rank": 780
+    },
+    {
+      "k": 15,
+      "N": 31,
+      "h": 31,
+      "top_exponent": 15,
+      "top_count": 1,
+      "gap": 4,
+      "next_exponent": 11,
+      "next_count": 14,
+      "generators": 161,
+      "measured_binary_rank": 14
+    },
+    {
+      "k": 16,
+      "N": 33,
+      "h": 11,
+      "top_exponent": 15,
+      "top_count": 4,
+      "gap": 4,
+      "next_exponent": 11,
+      "next_count": 536,
+      "generators": 4264,
+      "measured_binary_rank": 536
+    },
+    {
+      "k": 31,
+      "N": 63,
+      "h": 63,
+      "top_exponent": 31,
+      "top_count": 1,
+      "gap": 5,
+      "next_exponent": 26,
+      "next_count": 30,
+      "generators": 663,
+      "measured_binary_rank": 30
+    },
+    {
+      "k": 32,
+      "N": 65,
+      "h": 65,
+      "top_exponent": 31,
+      "top_count": 2,
+      "gap": 5,
+      "next_exponent": 26,
+      "next_count": 700,
+      "generators": 11120,
+      "measured_binary_rank": 700
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite the individual preprint corresponding to the result you use."
+type: software
+title: "Meander connectivity and loop weights"
+version: "2026.11.19"
+date-released: 2026-11-19
+authors:
+  - family-names: Argunov
+    given-names: Iaroslav
+repository-code: "https://github.com/Kimargin8/meander-connectivity-and-loop-weights"
+references:
+  - type: unpublished
+    title: "Unbounded gaps between the two largest distinct Smith factors of a one-defect connectivity matrix"
+    authors:
+      - family-names: Argunov
+        given-names: Iaroslav
+    year: 2026
+    url: "https://github.com/Kimargin8/meander-connectivity-and-loop-weights/releases/download/v2026.11.19/gap.pdf"
+  - type: unpublished
+    title: "Loop counts in closed meandric systems at large weight"
+    authors:
+      - family-names: Argunov
+        given-names: Iaroslav
+    year: 2026
+    url: "https://github.com/Kimargin8/meander-connectivity-and-loop-weights/releases/download/v2026.11.19/large_loop_weight.pdf"

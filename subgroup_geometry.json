@@ -1,0 +1,100 @@
+{
+  "python": "3.13.5",
+  "numpy": "2.4.3",
+  "cases": [
+    {
+      "k": 6,
+      "N": 13,
+      "h": 1,
+      "dimension": 1716,
+      "valuation_counts": [
+        64,
+        1288,
+        14,
+        336,
+        14
+      ],
+      "determinant_exponent": 2380,
+      "half_top": 336,
+      "matrix_sha256_uint16le": "201103725f7b39daf400677f2fdf0fad017194d604d49df68f596c27e878a43d"
+    },
+    {
+      "k": 6,
+      "N": 13,
+      "h": 13,
+      "dimension": 132,
+      "valuation_counts": [
+        4,
+        100,
+        2,
+        24,
+        2
+      ],
+      "determinant_exponent": 184,
+      "half_top": 24,
+      "matrix_sha256_uint16le": "08650dbc04882bc0ef3a0518caef316c806e98f251092622b69612dfa54cabed"
+    },
+    {
+      "k": 7,
+      "N": 15,
+      "h": 3,
+      "dimension": 2145,
+      "valuation_counts": [
+        40,
+        1496,
+        38,
+        532,
+        38,
+        0,
+        0,
+        1
+      ],
+      "determinant_exponent": 3327,
+      "half_top": 0,
+      "matrix_sha256_uint16le": "440111dcf52f53f7978d0e93000234ac01f82bff409049398382a91c2c919c1c"
+    },
+    {
+      "k": 7,
+      "N": 15,
+      "h": 5,
+      "dimension": 1287,
+      "valuation_counts": [
+        24,
+        900,
+        22,
+        318,
+        22,
+        0,
+        0,
+        1
+      ],
+      "determinant_exponent": 1993,
+      "half_top": 0,
+      "matrix_sha256_uint16le": "cb3e3003a2128b28be9ec017c6a3571d13b5fea2b6830b26027560912c5bf936"
+    },
+    {
+      "k": 7,
+      "N": 15,
+      "h": 15,
+      "dimension": 429,
+      "valuation_counts": [
+        8,
+        300,
+        6,
+        108,
+        6,
+        0,
+        0,
+        1
+      ],
+      "determinant_exponent": 667,
+      "half_top": 0,
+      "matrix_sha256_uint16le": "cbb66ac7b1b21d570bdff9f5157d23c7501e7acd31301e21ebda7c4bd63d2f4d"
+    }
+  ],
+  "sha256_sources": {
+    "subgroup_geometry.py": "02ed07d7dc64503fd606fb15221813aba9b347a79343c1a996058bd4d8d5ec3e",
+    "cyclic_smith.py": "85bc8b45e3c71feb854aff9183ce7de490d79d202cdeaa12e260e5a84d00ecb7",
+    "port_kernel.py": "5949ce1d668e5cf631495df61876fe27e5261d669c2d70c1b0173954b19b8d88"
+  }
+}

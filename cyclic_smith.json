@@ -1,0 +1,150 @@
+{
+  "method": "unit pivots over Z/4096, divide remaining even block by two",
+  "source_sha256": "85bc8b45e3c71feb854aff9183ce7de490d79d202cdeaa12e260e5a84d00ecb7",
+  "reference_sha256": {
+    "port_kernel.py": "5949ce1d668e5cf631495df61876fe27e5261d669c2d70c1b0173954b19b8d88",
+    "gram_sectors.json": "6a6c2bc3913f1ee95a5881543c22dde6fdea4e738e0e9d91281024b6e4e7b9ca"
+  },
+  "numpy": "2.4.3",
+  "sympy": "1.14.0",
+  "cases": [
+    {
+      "k": 0,
+      "sites": 1,
+      "dimension": 1,
+      "valuations": [
+        1
+      ],
+      "determinant_exponent": 0,
+      "matrix_sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+    },
+    {
+      "k": 1,
+      "sites": 3,
+      "dimension": 1,
+      "valuations": [
+        0,
+        1
+      ],
+      "determinant_exponent": 1,
+      "matrix_sha256": "d86e8112f3c4c4442126f8e9f44f16867da487f29052bf91b810457db34209a4"
+    },
+    {
+      "k": 2,
+      "sites": 5,
+      "dimension": 2,
+      "valuations": [
+        0,
+        2
+      ],
+      "determinant_exponent": 2,
+      "matrix_sha256": "1e941f54c891e9f3e7844931e5eec23f847260a9748f81756520f9fd2880c6af"
+    },
+    {
+      "k": 3,
+      "sites": 7,
+      "dimension": 5,
+      "valuations": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "determinant_exponent": 5,
+      "matrix_sha256": "ce4e95f782ad50d9a6b7259b852f16edee2ae24a50aec23c6c018bc119b74321"
+    },
+    {
+      "k": 4,
+      "sites": 9,
+      "dimension": 14,
+      "valuations": [
+        2,
+        10,
+        0,
+        2
+      ],
+      "determinant_exponent": 16,
+      "matrix_sha256": "67fc298a0264d3c127643edadb98c5e27fddb88325ad40e03a9a399144aa9a0a"
+    },
+    {
+      "k": 5,
+      "sites": 11,
+      "dimension": 42,
+      "valuations": [
+        2,
+        34,
+        1,
+        4,
+        1
+      ],
+      "determinant_exponent": 52,
+      "matrix_sha256": "e17e9211708587f603b21208ee20dc84232f3be4d21ee4f3739e177713a8e7a2"
+    },
+    {
+      "k": 6,
+      "sites": 13,
+      "dimension": 132,
+      "valuations": [
+        4,
+        100,
+        2,
+        24,
+        2
+      ],
+      "determinant_exponent": 184,
+      "matrix_sha256": "2bd99109a79d18971940fd2947759cdecb4409c17113703ac74e1cd74673749b"
+    },
+    {
+      "k": 7,
+      "sites": 15,
+      "dimension": 429,
+      "valuations": [
+        8,
+        300,
+        6,
+        108,
+        6,
+        0,
+        0,
+        1
+      ],
+      "determinant_exponent": 667,
+      "matrix_sha256": "b8152791ec1757ad63f1c6fed2636340c4701cd59ce68096f410813f1cacfd78"
+    },
+    {
+      "k": 8,
+      "sites": 17,
+      "dimension": 1430,
+      "valuations": [
+        16,
+        912,
+        44,
+        412,
+        44,
+        0,
+        0,
+        2
+      ],
+      "determinant_exponent": 2426,
+      "matrix_sha256": "611c14f11cff441e7d504b17155e62174e0b5871a8bc07db04357ce4438faba2"
+    },
+    {
+      "k": 9,
+      "sites": 19,
+      "dimension": 4862,
+      "valuations": [
+        26,
+        2806,
+        236,
+        1548,
+        236,
+        0,
+        1,
+        8,
+        1
+      ],
+      "determinant_exponent": 8936,
+      "matrix_sha256": "67e251de275905ffbbb0f96254d1eb809eed138cb3526087770f991adfd08631"
+    }
+  ]
+}

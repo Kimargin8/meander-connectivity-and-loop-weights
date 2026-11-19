@@ -1,0 +1,167 @@
+\section*{2. A finite window at the river}
+Write \(V(t,y)\) for the generating function of diagrams in \(U\) with
+no arch common to both matchings. A common arch separates its endpoints
+from the other vertices in the noncrossing join: its interior can have
+no arch going to the exterior on either side. Conversely, a two-point
+join block is a common arch. Removing the singleton term \(z\) in the
+block decomposition therefore gives
+\[
+             V=F(tV^2,y)-tV^2.                                      \tag{3}
+\]
+We construct an upper bound on the weight of all continuations of a
+partially drawn diagram. This supplies a lower bound on the convergence
+radius of \(V\).
+
+Scan the river vertices from left to right. A vertical cut meets two
+lists of arch ends, one above and one below the river. Write each list
+in order of increasing distance from the river. In the scanned half-plane
+the ends are joined in pairs by disjoint paths. A length counts the
+visited vertices on one path. The side alternates on crossing a vertex,
+so opposite-side ends have odd length and same-side ends have even
+length. Record a length by class 1 for length one, 2 for positive even
+length, and 3 for odd length at least three. The four possible moves,
+specified by the opening or closing parenthesis in each matching, are:
+\begin{itemize}
+\item \(U\): open on both sides, creating a path of length one with a
+new nearest end on each list.
+\item \(R,L\): close on one side and open on the other. Move the nearest
+end of the closing list to the head of the other list and increment
+its path length.
+\item \(D\): close on both sides, consuming the nearest end on each
+list. Two different paths of lengths \(i,j\) merge to length \(i+j+1\).
+A shared path closes with weight \(q\); closure of a class-1 path is
+forbidden because it creates a common arch.
+\end{itemize}
+A move requiring a missing end is unavailable. The two parentheses
+at each vertex prescribe the exposed ends uniquely, by noncrossing
+on each side. Consequently histories from empty to empty are in
+bijection with the labelled arch pairs entering \(V\).
+
+Let \(\mathcal S\) consist of all finite noncrossing pairings of these
+ends with these parity-compatible classes. This includes every physically
+reachable frontier. The four rules act on \(\mathcal S\) without actual
+lengths: increment takes classes \(1,2,3\) to \(2,3,2\); a merge always
+has length at least three and its parity is known. For positive weights
+\(w_1,w_2,w_3\) put \(H(s)=\prod_p w_{c(p)}\) over open paths of \(s\).
+For a valid move \(e:s\longrightarrow es\) let \(r_e(s)\) be
+\(H(es)/H(s)\) times the closing weight, if any.
+
+\begin{lemma}
+Retain the nearest \(d\) ends of each list, or the entire list if
+shorter. Also retain their partners and the classes of their paths.
+Erase all other paths and compress the two lists, preserving order.
+Call the resulting pairing \(P_ds\). For a move \(e\), its availability,
+its multiplier, and \(P_d(es)\) are determined by \(P_{d+1}s\).
+\end{lemma}
+Indeed, at most one existing end is removed from either list in a single
+move. Any old end that becomes one of its nearest \(d\) was among the
+previous nearest \(d+1\) on its side (including an end about to slide
+to the other side). A new end is given explicitly. The changed paths
+meet the old nearest ends. All their old partners are therefore present,
+including the far ends of two paths that merge. The order among
+unaffected retained ends is preserved. If the full list had fewer than
+\(d+1\) ends it was retained in its entirety. These facts also prove
+\(P_dP_{d+1}=P_d\). This argument holds at arbitrary frontier size.
+
+To enumerate the possible \(P_ds\), take all noncrossing pairings
+of \(2j\) ends with \(0\le j\le 2d\), split the ordered ends at
+every possible divider, and discard the pairing if some path misses
+both near-end windows. The linear boundary order reverses the first
+list and then follows the second. Assign class 2 to each same-side
+path and either 1 or 3 to each opposite-side path. Every possible
+window occurs in this list. Conversely each enumerated configuration
+is its own window in \(\mathcal S\). For functions symmetric in the
+two lists we identify a configuration with its reflection. Both slides
+are still included in the sum, even if they give the same target.
+
+Define the positive linear operator \(Tg(s)=\sum_e r_e(s)g(es)\).
+A finite test for a multiplier bound \(\Lambda\) consists of positive
+numbers \(h(P_ds)\) such that for each enumerated width-\((d+1)\)
+window \(S\),
+\[
+       \sum_e r_e(S)\,h(P_d(eS))\ \le\ \Lambda h(P_dS).                \tag{4}
+\]
+The same \(S\) determines all terms on the left. The lemma gives (4)
+on the whole state space. Iteration from the empty state bounds the
+total closing weight of histories returning empty after \(2n\) steps by
+\(\Lambda^{2n}\), since their initial and final potentials coincide.
+Accordingly \(V(t,1/q)\) has radius at least \(q/\Lambda^2\).
+
+\paragraph{What increasing the width can prove.}
+For fixed \(q,w_i>0\) put \(a_j=\sup_{\mathcal S} T^j1\) and
+\(\rho=\lim_{j\to\infty}a_j^{1/j}\). This limit exists by
+submultiplicativity; each \(a_j\) is finite since the local multipliers
+are bounded. The infima of the constants in (4) decrease with \(d\)
+and converge to \(\rho\). In one direction any positive finite-window
+potential has positive minimum and finite maximum. Iteration of (4)
+thus gives \(a_j\le (\max h/\min h)\Lambda^j\). For the other direction
+take \(\lambda>\rho\) and choose \(L\) such that \(a_L<\lambda^L\).
+Each \(T^j1\) depends only on \(P_j s\), by the lemma. The positive
+reflection-invariant function
+\[
+ g=\sum_{j=0}^{L-1}\lambda^{-j}T^j1
+ \qquad\hbox{satisfies}\qquad
+ Tg=\lambda(g-1+\lambda^{-L}T^L1)\le\lambda g .
+\]
+It is a width-\((L-1)\) certificate. The monotonicity uses
+\(P_dP_{d+1}=P_d\). Here \(\rho\) is the uniform growth of continuations
+from arbitrary formal states. Identifying it with the empty-to-empty
+growth rate is a separate question.
+
+\paragraph{The rational certificate.}
+Take \(q_0=18\), \(d=6\), \((w_1,w_2,w_3)=(1432,2940,4284)/1000\),
+and \(\Lambda=5447/1000\). Up to reflection there are 25,000 width-six
+windows and 128,600 width-seven extensions. The certificate enumerates
+them by matching the first end of each interval to an admissible partner
+and splitting into its interior and exterior subintervals. A pair with
+both endpoints outside the retained window is excluded at its creation.
+A separate count by reflection and Burnside's lemma verifies both totals.
+Start every width-six entry at \(10^{10}\). For each source take the
+maximum over its extensions of the left side of (4). Normalize the new
+vector by its maximum, multiply by \(10^{10}\), round down and replace
+entries below one by one. After 180 iterations the largest exact ratio
+over the extensions is
+\[
+   299370707754862/55041444031875 < 5.447 .
+\]
+Only the final inequalities are needed for the bound.
+
+Set \(t_0=6065/10000\) and \(b=6977/10000\); then
+\(t_0\Lambda^2<18\). For a lower bound let \(K_a\) be the sum of
+\(18^{\#\text{loops}}\) over empty-to-empty histories of length \(2a\)
+with at most 14 active ends at every stage and no common arch.
+The forward recurrence starts at the empty state with weight one.
+It drops moves exceeding the cap, assigns multiplier 18 to an allowed
+closure, and sums incoming weights at the next state. All other
+multipliers are one. It visits 18,924 reflected states and gives
+\[
+        t_0\left(\sum_{a=0}^{40}K_a(t_0/18)^a\right)^2 > b .
+\]
+Thus \(z_0=t_0V(t_0,1/18)^2>b\), and (3) implies convergence of
+\(F(z,1/18)\) beyond \(b\). As a second check, differentiating (3)
+at \(z=tV^2\) gives
+\[
+ (2zF_z-F)(V+2tV_t)=V^2(tV-1+2t^2V_t).
+\]
+The same restricted counts give a lower bound greater than 0.00157 for
+\(t_0V-1+2t_0^2V_t\). The derivatives exist at this point because
+\(t_0\) is strictly inside the radius and \(tV(t,1/18)^2\) is increasing.
+
+For \(q=18x^2\), \(x\ge1\), the support inequality \(2s\ge a\) for all
+nontrivial blocks now implies convergence of \(F(z,1/q)\) beyond \(bx\).
+At that argument a lower bound for \(2zF_z-F\) is
+\[
+ bx-1+\sum_{2\le a\le12,s} C_{a,s}x^{a-2s},\qquad
+ C_{a,s}=(2a-1)f_{a,s} b^a18^{-s}.
+\]
+The coefficients through order twelve follow by reverting (1) from the
+complete loop-count rows. Exact arithmetic gives a value greater than
+0.00016 at \(x=1\) and derivative at least
+\(b-\sum(2s-a)C_{a,s}>0.4948\) throughout \(x\ge1\).
+The mean \(zF_z/F\) starts at zero and has strictly positive derivative
+\(\Var A\) with respect to \(\log z\). This establishes the interior
+saddle throughout the claimed interval. At positive \(y\), convergence
+extends to a neighbourhood in both variables since \(s\le a\).
+Near \((z,y)=(1,0)\), the bounds \(f_{a,s}\le16^a\) and \(s\ge a/2\)
+give an analytic neighbourhood. The saddle there is analytic by the
+implicit function theorem applied to \(2zF_z-F\).

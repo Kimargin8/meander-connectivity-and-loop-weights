@@ -1,0 +1,91 @@
+{
+  "sympy": "1.14.0",
+  "cases": [
+    {
+      "k": 1,
+      "subgroup_order": 1,
+      "dimension": 3,
+      "integer_factors": {
+        "1": 2,
+        "2": 1
+      }
+    },
+    {
+      "k": 1,
+      "subgroup_order": 3,
+      "dimension": 1,
+      "integer_factors": {
+        "2": 1
+      }
+    },
+    {
+      "k": 2,
+      "subgroup_order": 1,
+      "dimension": 10,
+      "integer_factors": {
+        "1": 4,
+        "2": 6
+      }
+    },
+    {
+      "k": 2,
+      "subgroup_order": 5,
+      "dimension": 2,
+      "integer_factors": {
+        "2": 2
+      }
+    },
+    {
+      "k": 3,
+      "subgroup_order": 1,
+      "dimension": 35,
+      "integer_factors": {
+        "1": 8,
+        "2": 26,
+        "8": 1
+      }
+    },
+    {
+      "k": 3,
+      "subgroup_order": 7,
+      "dimension": 5,
+      "integer_factors": {
+        "1": 2,
+        "2": 2,
+        "8": 1
+      }
+    },
+    {
+      "k": 4,
+      "subgroup_order": 3,
+      "dimension": 42,
+      "integer_factors": {
+        "1": 4,
+        "2": 34,
+        "8": 4
+      }
+    },
+    {
+      "k": 4,
+      "subgroup_order": 9,
+      "dimension": 14,
+      "integer_factors": {
+        "1": 2,
+        "2": 10,
+        "8": 2
+      }
+    },
+    {
+      "k": 5,
+      "subgroup_order": 11,
+      "dimension": 42,
+      "integer_factors": {
+        "1": 2,
+        "2": 34,
+        "4": 1,
+        "8": 4,
+        "16": 1
+      }
+    }
+  ]
+}
